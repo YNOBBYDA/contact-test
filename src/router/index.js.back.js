@@ -4,16 +4,11 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: () => import('../views/Contact.vue')
   },
   {
     path: '/about',

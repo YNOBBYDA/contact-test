@@ -4,24 +4,44 @@
       <v-col
         cols="12"
       >
-        <h1>お問い合わせ</h1>
+        <h3>お問い合わせ</h3>
+        <hr width="100%" color="#50B197" align="center" noshade>
         <v-form
           v-model="valid"
         >
-          <v-text-field
-            v-model="title.value"
-            :rules="title.rules"
-            :label="title.label"
-          />
-          <v-text-field
-            v-model="contact.value"
-            :rules="contact.rules"
-            :label="contact.label"
-          />
           <v-textarea
             v-model="content.value"
             :rules="content.rules"
             :label="content.label"
+          />
+          <v-text-field
+            v-model="companyname.value"
+            :rules="companyname.rules"
+            :label="companyname.label"
+          />
+          <v-text-field
+            v-model="departmentname.value"
+            :rules="departmentname.rules"
+            :label="departmentname.label"
+          />
+          <v-text-field
+            v-model="fullname.value"
+            :rules="fullname.rules"
+            :label="fullname.label"
+          />
+          <v-text-field
+            v-model="fullnamekana.value"
+            :rules="fullnamekana.rules"
+            :label="fullnamekana.label"
+          />
+           <v-text-field
+            v-model="contact.value"
+            :rules="contact.rules"
+            :label="contact.label"
+          />
+           <v-text-field
+            v-model="phone.value"
+            :label="phone.label"
           />
           <v-btn
             block
@@ -29,7 +49,7 @@
             class="font-weight-bold"
             @click="dialog = true"
           >
-            同意して送信する
+            入力内容の確認
           </v-btn>
         </v-form>
       </v-col>
@@ -37,7 +57,7 @@
 
     <v-dialog
       v-model="dialog"
-      max-width="290"
+      max-width="500"
     >
       <v-card
         v-if="valid"
@@ -47,16 +67,40 @@
           class="pt-5"
         >
           <h4>
-            {{ title.label }}
+            {{ companyname.label }}
           </h4>
           <p>
-            {{ title.value }}
+            {{ companyname.value }}
+          </p>
+          <h4>
+            {{ departmentname.label }}
+          </h4>
+          <p>
+            {{ departmentname.value }}
+          </p>
+          <h4>
+            {{ fullname.label }}
+          </h4>
+          <p>
+            {{ fullname.value }}
+          </p>
+          <h4>
+            {{ fullnamekana.label }}
+          </h4>
+          <p>
+            {{ fullnamekana.value }}
           </p>
           <h4>
             {{ contact.label }}
           </h4>
           <p>
             {{ contact.value }}
+          </p>
+          <h4>
+            {{ phone.label }}
+          </h4>
+          <p>
+            {{ phone.value }}
           </p>
           <h4>
             {{ content.label }}
@@ -136,25 +180,44 @@ export default {
   name: 'Contact',
   data () {
     return {
-      title: {
+      content: {
         value: null,
-        rules: [v => !!v || '必ず入力してください'],
-        label: '件名'
+        rules: [v => !!v || '※必須'],
+        label: 'お問い合わせ内容'
+      },
+      companyname: {
+        value: null,
+        rules: [v => !!v || '※必須'],
+        label: '企業名・団体名'
+      },
+      departmentname: {
+        value: null,
+        rules: [v => !!v || '※必須'],
+        label: '部署名'
+      },
+      fullname: {
+        value: null,
+        rules: [v => !!v || '※必須'],
+        label: '氏名'
+      },
+      fullnamekana: {
+        value: null,
+        rules: [v => !!v || '※必須'],
+        label: 'フリガナ'
       },
       contact: {
         value: null,
         rules: [
-          v => !!v || '必ず入力してください',
+          v => !!v || '※必須',
           v => /.+@.+/.test(v) || 'メールアドレスの形式が正しくありません'
         ],
         label: 'メールアドレス'
       },
-      content: {
+      phone: {
         value: null,
-        rules: [v => !!v || '必ず入力してください'],
-        label: '内容'
+        label: '電話番号'
       },
-      valid: false,
+     valid: false,
       dialog: false,
       snackbar: false,
       loading: false,
@@ -166,15 +229,19 @@ export default {
       this.loading = true
       if (!this.valid) { return }
       const instance = axios.create({
-        baseURL: 'https://wbdoykta7e.execute-api.ap-northeast-1.amazonaws.com'
+        baseURL: 'https://0a8sxjmiod.execute-api.ap-northeast-1.amazonaws.com'
       })
       instance.post('/default/contactFunction', {
-        title: this.title.value,
+        content: this.content.value,
+        companyname: this.companyname.value,
+        departmentname: this.departmentname.value,
+        fullname: this.fullname.value,
+        fullnamekana: this.fullnamekana.value,
         contact: this.contact.value,
-        content: this.content.value
+        phone: this.phone.value
       }).then((response) => {
         this.result = response.data.body
-        this.message = '送信が完了しました。'
+        this.message = 'お問い合わせ内容を送信いたしました。'
       }).catch((error) => {
         this.result = error
         this.message = '送信が失敗しました。もう一度お試しください。'
@@ -191,7 +258,7 @@ export default {
   white-space: pre-line;
 }
 .contentPreview {
-  max-height: 200px;
+  max-height: 300px;
   overflow: scroll;
 }
 </style>

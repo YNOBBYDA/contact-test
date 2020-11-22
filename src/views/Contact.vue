@@ -1,9 +1,22 @@
 <template>
   <div class="contact">
-    <v-row class="text-center pa-3">
+  <v-row class="text-center pa-3">
       <v-col
         cols="12"
       >
+      <div class="container">
+        <header>
+            <div class="menu">
+                <a href="./index.html"><img src="@/assets/img/logo.svg" alt="HOME"></a>
+                <ul>
+                    <li class="menu-link"><a href="./vision.html"><button class="kadomaru default-color">Vision</button></a></li>
+                    <li class="menu-link"><a href="./profile.html"><button class="kadomaru default-color">会社概要</button></a></li>
+                    <li class="menu-link"><a href="./access.html"><button class="kadomaru default-color">アクセス</button></a></li>
+                    <li class="menu-link"><a href="https://master.d3odxu3dzk7ffj.amplifyapp.com/"><button class="kadomaru hhc-color">お問い合わせ</button></a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
         <h3>お問い合わせ</h3>
         <hr width="100%" color="#50B197" align="center" noshade>
         <v-form

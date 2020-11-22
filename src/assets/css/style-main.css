@@ -1,0 +1,226 @@
+html,body,div {
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+/*    align-items: center; */
+}
+
+.menu a {
+    height: 80px;
+    width: auto;
+}
+
+.menu a img {
+    width: auto;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-size: 1em;  
+    margin: 0;
+
+}
+
+.menu-link {
+    margin: 20px 5px;   
+}
+
+.menu-link a {
+    text-decoration: none;
+}
+
+.kadomaru:hover {
+    background: #50B197;
+    color: #FFFFFF;
+}
+
+
+/***********************************************************************
+ *  Home
+ **********************************************************************/
+
+.top {
+    background-image: url('../img/page1/grp-top.jpg');
+    background-position: center center;
+    background-size: cover;
+    width: 1140px;
+    height: 491px;
+
+}
+
+.subtitle img{
+    width: 299px;
+    height:80px;
+    margin: 20px auto;
+    display: block;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+
+}
+
+.contents img {
+    width: 255px;
+    height:auto;
+    margin: 10px;
+}
+
+.footer {
+ /*
+    background-image: url('../img/page1/grp-footer.png');
+    background-position: center center;
+    background-size: cover;
+ */
+    width: 1140px;
+    height: 52px;
+
+}
+
+.footer p {
+    text-align: right;
+    font-size: 12px;
+    padding: 15px;
+}
+
+/***********************************************************************
+ *  Vision
+ **********************************************************************/
+ .top-vision {
+    background-image: url('../img/page-vision/grp-top-vision.jpg');
+    background-position: center center;
+    background-size: cover;
+    width: 1140px;
+    height: 250px;
+
+}
+
+.vision img{
+    width: 600px;
+    height:auto;
+    margin: 20px auto 100px auto;
+    display: block;
+}
+
+.value img{
+    width: 600px;
+    height:auto;
+    margin: 20px auto 80px auto;
+    display: block;
+}
+
+/***********************************************************************
+ *  会社概要
+ **********************************************************************/
+ .top-profile {
+    background-image: url('../img/page-profile/grp-top-profile.jpg');
+    background-position: center center;
+    background-size: cover;
+    width: 1140px;
+    height: 250px;
+}
+
+ .container-profile {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 1fr 2fr;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    margin-bottom:80px;
+   
+ }
+
+.zone-profile {
+    cursor:pointer;
+ /*   display:inline-block; */
+    text-align: left;
+    font-size:1em;
+    border-radius:4px;
+ 
+ /*   border:1px solid #bbb;
+    transition: all 0.3s linear;
+ */
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 10px;
+
+}
+
+/***********************************************************************
+ *  Green Background
+ **********************************************************************/
+ .hhc-color {
+    background: #50B197;
+    color: #FFFFFF;
+ }
+
+ .default-color {
+    background: #FFFFFF;
+    color: #5a5a5a ; 
+ }
+
+ .hhc-front-color {
+    color: #8f8f8f;
+ }
+
+/***********************************************************************
+ *  地図
+ **********************************************************************/
+ .top-access {
+    background-image: url('../img/page-access/grp-top-access.jpg');
+    background-position: center center;
+    background-size: cover;
+    width: 1140px;
+    height: 250px;
+
+}
+
+ 
+ .access-map {
+    display: block;
+ /*   background-image: url('../img/page-access/access-map.png');
+    background-position: center center;
+    background-size: cover;
+    width: 800px;
+    height: 621px;
+    margin: 20px auto 100px auto;
+*/
+width: 100%;
+margin: 20px auto 100px auto;
+text-align: center;
+}
+
+
+/* 角丸 */
+.kadomaru {
+    width:110px;
+    font-size:16px;
+    text-align:center;
+    display:block;
+    padding:10px 0px;
+    border-radius: 20px;
+    border-style: none;
+  }

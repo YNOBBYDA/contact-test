@@ -4,6 +4,9 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
+/* cssをimport 20201122 */
+import '@/assets/css/style-main.css'
+import '@/assets/css/responsive.css'
 
 Vue.config.productionTip = false
 
